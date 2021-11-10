@@ -1,4 +1,64 @@
-//------------------TABLE 2---------------------//
+//----------------------------------------------TABLE 1---------------------------------------------------------//
+
+//------------Table 1 variables----------//
+var table = document.getElementById("table1");
+
+var tbody = table.getElementsByTagName("tbody")[0];
+
+var table_tr = tbody.getElementsByTagName("tr")[1];
+
+var table_td = table_tr.getElementsByTagName("td")[0];
+
+
+
+
+var table_data = [];
+
+
+
+// Create First table Canvas //
+
+var canvas = document.createElement ("canvas");
+
+canvas.style.height= "auto";
+canvas.style.width= "auto";
+canvas.style.margin= "20px 0";
+canvas.id = "graph";
+
+// Insert in HTML file //
+
+table.before (canvas);
+
+//------------------------------------------Get Datas---------------------------------------//
+
+//-------Get Country's list-----//
+
+var table_country = [];
+
+for (r = 1; r < tbody.getElementsByTagName ("tr").length; r++) 
+{
+  table_country.push (tbody.getElementsByTagName ("tr")[r].getElementsByTagName ("td")[0].innerText);
+}
+
+//-------Get table datas-----//
+var table_years = [];
+
+var years_Row = document.getElementsByTagName("tr")[1];
+
+var years = years_Row.getElementsByTagName("th")[0];
+
+for (r= 2; r <years_Row.getElementsByTagName("th").length; r++)
+{
+  table_years.push(years_Row.getElementsByTagName("th")[r].innerHTML);
+}
+
+
+console.log(table_years);
+
+
+//continue here//
+
+//---------------------------------------------------------TABLE 2----------------------------------------------------------//
 
 //------------Table 2 variables----------//
 
@@ -29,7 +89,7 @@ table2.before (canvas2);
 
 
 
-//------------------------------------------Get the datas---------------------------------------//
+//----------------Get Datas----------------//
 
 //-------Get Country's list-----//
 var table2_country = [];
@@ -70,17 +130,12 @@ const myChart2 = new Chart(ctx2, {
       {
         label: "2007-09",
         data: table2_07,
-        backgroundColor: ["rgba(52, 152, 219, 0.9)"],
-        borderColor: ["rgba(52, 152, 219, 0.9)"],
-        borderWidth: 1,
+        backgroundColor: ["rgba(255,101,80,0.4)"],
       },
       {
         label: "2010-12",
         data: table2_09,
-        backgroundColor: ["rgba(46, 204, 113, 0.9)"],
-        borderColor: ["rgba(46, 204, 113, 09)"],
-      
-        borderWidth: 1,
+        backgroundColor: ["rgba(5,255,80,0.51)"],
       },
     ],
   },
